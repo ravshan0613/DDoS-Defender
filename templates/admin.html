@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <style>
+        body { font-family: Arial; background-color: #f9f9f9; padding: 20px; }
+        h1 { color: #333; }
+        pre { background-color: #eee; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1> DDoS Monitoring - Admin Panel</h1>
+
+    <h2>Bloklangan IP manzillar:</h2>
+    <ul>
+        {% for ip in blocked_ips %}
+            <li>{{ ip }}</li>
+        {% else %}
+            <li>Hozircha bloklangan IP yo‘q.</li>
+        {% endfor %}
+    </ul>
+
+    <h2> So‘nggi Loglar:</h2>
+    <pre>
+        {% for line in logs %}
+            {{ line }}
+        {% endfor %}
+    </pre>
+</body>
+</html>
